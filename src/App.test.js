@@ -41,4 +41,3 @@ test("navigates to the Contact Us page", async () => {
     screen.getByRole("heading", { name: "Contact Us" })
   ).toBeInTheDocument();
 });
-
