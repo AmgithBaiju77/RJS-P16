@@ -1,43 +1,45 @@
-import React from "react";
 
-// TODO: Import the required components from react-router-dom
-// TODO: include the Home component
-// TODO: include the About Us component
-// TODO: include the Contact Us component
+import React from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
-
   return (
-    <div>
+    <BrowserRouter>
+      <div className="app">
+        <header className="header">
+          <h1>My Website</h1>
 
-      <header>
-        <h1>My React Website</h1>
+          <nav className="navbar">
+            <Link to="/">Home</Link>
+            <Link to="/aboutus">About Us</Link>
+            <Link to="/contactus">Contact Us</Link>
+          </nav>
+        </header>
 
-        <nav>
-          {/* TODO:
-              Create navigation links for:
-              1. Home
-              2. About Us
-              3. Contact Us
-          */}
-        </nav>
-      </header>
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/aboutus" element={<About />} />
+            <Route path="/contactus" element={<Contact />} />
+          </Routes>
+        </main>
 
-
-      <main>
-
-        {/* TODO:
-            1. Add BrowserRouter
-            2. Add Routes
-            3. Create Route for Home
-            4. Create Route for About Us
-            5. Create Route for Contact Us
-        */}
-
-      </main>
-
-    </div>
+        <footer className="footer">
+          <p>© 2026 My Website. All rights reserved.</p>
+        </footer>
+      </div>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
